@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ujian IPA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- HALAMAN LOGIN -->
+<div id="hal1">
+    <center>
+        <h2>UJIAN IPA KELAS 8</h2>
+        <p>Madrasah Tsanawiyah</p>
+        <hr>
+        <p>Nama: <br><input type="text" id="nama" size="30"></p>
+        <p>Kelas: <br><input type="text" id="kelas" size="30"></p>
+        <p>Absen: <br><input type="number" id="absen" size="30"></p>
+        <br>
+        <button onclick="mulai()" style="font-size:20px; padding:10px 30px; background:blue; color:white; border:none; border-radius:5px;">
+            MULAI UJIAN
+        </button>
+        <p style="color:red;">⚠️ Jangan buka tab lain!</p>
+    </center>
+</div>
+
+<!-- HALAMAN UJIAN -->
+<div id="hal2" style="display:none;">
+    <div style="background:#eee; padding:10px; margin-bottom:10px;">
+        <span id="info"></span> | 
+        ⏰ <span id="timer" style="color:red;">90:00</span> |
+        <span id="status">🟢</span>
+    </div>
+    
+    <div id="peringatan" style="background:yellow; padding:10px; display:none; margin-bottom:10px;"></div>
+
+    <h3>A. PILIHAN GANDA</h3>
+    <ol>
+        <li>72 km/jam = ... m/s<br>
+            <input type="radio" name="q1" value="A"> A. 10<br>
+            <input type="radio" name="q1" value="B"> B. 15<br>
+            <input type="radio" name="q1" value="C"> C. 20<br>
+            <input type="radio" name="q1" value="D"> D. 25
+        </li><br>
+        
+        <li>Contoh gerak nasti...<br>
+            <input type="radio" name="q2" value="A"> A. Bunga mekar & putri malu<br>
+            <input type="radio" name="q2" value="B"> B. Akar ke air<br>
+            <input type="radio" name="q2" value="C"> C. Batang ke cahaya<br>
+            <input type="radio" name="q2" value="D"> D. Daun gugur
+        </li><br>
+        
+        <li>Hukum II Newton: F = ...<br>
+            <input type="radio" name="q3" value="A"> A. m × a<br>
+            <input type="radio" name="q3" value="B"> B. m × v<br>
+            <input type="radio" name="q3" value="C"> C. m / a<br>
+            <input type="radio" name="q3" value="D"> D. v × t
+        </li><br>
+        
+        <li>Dorong tembok tak bergerak = ...<br>
+            <input type="radio" name="q4" value="A"> A. Aksi-reaksi<br>
+            <input type="radio" name="q4" value="B"> B. Gaya gesek<br>
+            <input type="radio" name="q4" value="C"> C. Tidak ada usaha<br>
+            <input type="radio" name="q4" value="D"> D. Gravitasi
+        </li><br>
+        
+        <li>Pengangkut hasil fotosintesis...<br>
+            <input type="radio" name="q5" value="A"> A. Epidermis<br>
+            <input type="radio" name="q5" value="B"> B. Korteks<br>
+            <input type="radio" name="q5" value="C"> C. Floem<br>
+            <input type="radio" name="q5" value="D"> D. Xilem
+        </li><br>
+        
+        <li>Enzim pengubah protein di lambung...<br>
+            <input type="radio" name="q6" value="A"> A. Ptialin<br>
+            <input type="radio" name="q6" value="B"> B. Renin<br>
+            <input type="radio" name="q6" value="C"> C. Pepsin<br>
+            <input type="radio" name="q6" value="D"> D. Lipase
+        </li><br>
+        
+        <li>0→20 m/s dalam 5 detik, percepatan = ...<br>
+            <input type="radio" name="q7" value="A"> A. 2<br>
+            <input type="radio" name="q7" value="B"> B. 4<br>
+            <input type="radio" name="q7" value="C"> C. 10<br>
+            <input type="radio" name="q7" value="D"> D. 100
+        </li><br>
+        
+        <li>Bunga pukul empat mekar karena...<br>
+            <input type="radio" name="q8" value="A"> A. Sentuhan<br>
+            <input type="radio" name="q8" value="B"> B. Cahaya<br>
+            <input type="radio" name="q8" value="C"> C. Suhu<br>
+            <input type="radio" name="q8" value="D"> D. Zat kimia
+        </li><br>
+        
+        <li>Terdorong saat bus direm = Hukum...<br>
+            <input type="radio" name="q9" value="A"> A. I Newton<br>
+            <input type="radio" name="q9" value="B"> B. II Newton<br>
+            <input type="radio" name="q9" value="C"> C. III Newton<br>
+            <input type="radio" name="q9" value="D"> D. Archimedes
+        </li><br>
+        
+        <li>Massa 5 kg, gaya 20 N → a = ...<br>
+            <input type="radio" name="q10" value="A"> A. 4 m/s²<br>
+            <input type="radio" name="q10" value="B"> B. 15<br>
+            <input type="radio" name="q10" value="C"> C. 25<br>
+            <input type="radio" name="q10" value="D"> D. 100
+        </li>
+    </ol>
+
+    <h3>B. URAIAN</h3>
+    <p>11. GLBB: v₀=5 m/s, a=2 m/s², t=6 detik → vₜ = ...?<br>
+    <textarea id="q11" rows="3" cols="50"></textarea></p>
+    
+    <p>12. Tuas: W=400N, Lb=50cm, Lk=2m → F=?<br>
+    <textarea id="q12" rows="3" cols="50"></textarea></p>
+    
+    <p>13. Pemanis alami vs buatan, bedanya?<br>
+    <textarea id="q13" rows="3" cols="50"></textarea></p>
+    
+    <p>14. Depresan vs stimulan + contoh?<br>
+    <textarea id="q14" rows="3" cols="50"></textarea></p>
+    
+    <p>15. Skema peredaran darah kecil?<br>
+    <textarea id="q15" rows="3" cols="50"></textarea></p>
+    
+    <p>16. Fungsi stomata, kenapa di bawah daun?<br>
+    <textarea id="q16" rows="3" cols="50"></textarea></p>
+
+    <br>
+    <button onclick="selesai()" style="font-size:20px; padding:15px; background:green; color:white; border:none; width:100%;">
+        KUMPULKAN JAWABAN
+    </button>
+</div>
+
+<!-- HALAMAN HASIL -->
+<div id="hal3" style="display:none;">
+    <center>
+        <h2>✅ UJIAN SELESAI</h2>
+        <div id="hasil" style="background:#f0f0f0; padding:20px; margin:20px; text-align:left;"></div>
+        <p style="color:green;">Jawaban uraian akan diperiksa guru</p>
+    </center>
+</div>
+
+<script>
+// Kunci jawaban
+var kunci = {
+    q1:'C', q2:'A', q3:'A', q4:'C', q5:'C',
+    q6:'C', q7:'B', q8:'C', q9:'A', q10:'A'
+};
+
+var detik = 5400;
+var timerJalan = null;
+var ujianAktif = false;
+var curang = 0;
+
+function mulai() {
+    var nama = document.getElementById('nama').value;
+    var kelas = document.getElementById('kelas').value;
+    var absen = document.getElementById('absen').value;
+    
+    if (nama == '' || kelas == '' || absen == '') {
+        alert('ISI SEMUA DATA DULU!');
+        return;
+    }
+    
+    document.getElementById('info').innerHTML = nama + ' | ' + kelas + ' | ' + absen;
+    document.getElementById('hal1').style.display = 'none';
+    document.getElementById('hal2').style.display = 'block';
+    document.getElementById('hal3').style.display = 'none';
+    
+    ujianAktif = true;
+    curang = 0;
+    
+    timerJalan = setInterval(function() {
+        detik--;
+        var m = Math.floor(detik / 60);
+        var d = detik % 60;
+        document.getElementById('timer').innerHTML = m + ':' + (d < 10 ? '0' : '') + d;
+        
+        if (detik <= 0) {
+            clearInterval(timerJalan);
+            alert('WAKTU HABIS!');
+            selesai();
+        }
+    }, 1000);
+}
+
+function peringatan(pesan) {
+    document.getElementById('peringatan').style.display = 'block';
+    document.getElementById('peringatan').innerHTML = pesan;
+    document.getElementById('status').innerHTML = '🔴';
+    setTimeout(function() {
+        document.getElementById('peringatan').style.display = 'none';
+        if (ujianAktif) document.getElementById('status').innerHTML = '🟢';
+    }, 2000);
+}
+
+function selesai() {
+    clearInterval(timerJalan);
+    ujianAktif = false;
+    
+    var benar = 0;
+    for (var i = 1; i <= 10; i++) {
+        var pilihan = document.querySelector('input[name="q' + i + '"]:checked');
+        if (pilihan && pilihan.value == kunci['q' + i]) {
+            benar++;
+        }
+    }
+    
+    document.getElementById('hal2').style.display = 'none';
+    document.getElementById('hal3').style.display = 'block';
+    
+    var status = '';
+    if (curang >= 3) status = '<b style="color:red">KECURANGAN!</b>';
+    else if (curang > 0) status = '<b style="color:orange">Peringatan ' + curang + 'x</b>';
+    else status = '<b style="color:green">AMAN</b>';
+    
+    document.getElementById('hasil').innerHTML = 
+        'Nama: <b>' + document.getElementById('nama').value + '</b><br>' +
+        'Kelas: <b>' + document.getElementById('kelas').value + '</b><br>' +
+        'Absen: <b>' + document.getElementById('absen').value + '</b><br>' +
+        'Nilai PG: <b>' + benar + '/10</b><br>' +
+        'Status: ' + status;
+}
+
+// ANTI CURANG
+document.addEventListener('visibilitychange', function() {
+    if (ujianAktif && document.hidden) {
+        curang++;
+        peringatan('⚠️ BUKA TAB LAIN! (' + curang + '/3)');
+        if (curang >= 3) {
+            alert('UJIAN DIHENTIKAN!');
+            selesai();
+        }
+    }
+});
+
+document.oncontextmenu = function(e) {
+    if (ujianAktif) {
+        e.preventDefault();
+        peringatan('⚠️ KLIK KANAN DIBLOKIR!');
+    }
+};
+
+document.oncopy = function(e) {
+    if (ujianAktif) {
+        e.preventDefault();
+        peringatan('⚠️ COPY DIBLOKIR!');
+    }
+};
+
+document.onpaste = function(e) {
+    if (ujianAktif) {
+        e.preventDefault();
+        peringatan('⚠️ PASTE DIBLOKIR!');
+    }
+};
+</script>
+
+</body>
+</html>
